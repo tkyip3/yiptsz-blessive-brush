@@ -86,10 +86,15 @@ export interface Config {
   db: {
     defaultIDType: number;
   };
-  fallbackLocale: null;
+  fallbackLocale:
+    | ('false' | 'none' | 'null')
+    | false
+    | null
+    | ('en' | 'zh-hk' | 'zh-cn')
+    | ('en' | 'zh-hk' | 'zh-cn')[];
   globals: {};
   globalsSelect: {};
-  locale: null;
+  locale: 'en' | 'zh-hk' | 'zh-cn';
   user: User & {
     collection: 'users';
   };
