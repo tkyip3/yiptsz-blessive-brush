@@ -1,8 +1,7 @@
-import fs from 'fs'
-import path from 'path'
 import { sqliteD1Adapter } from '@payloadcms/db-d1-sqlite'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
-import { buildConfig } from 'payload'
+import path from 'path'
+import { buildConfig, Plugin } from 'payload'
 import { fileURLToPath } from 'url'
 import { CloudflareContext, getCloudflareContext } from '@opennextjs/cloudflare'
 import { GetPlatformProxyOptions } from 'wrangler'
@@ -10,19 +9,27 @@ import { r2Storage } from '@payloadcms/storage-r2'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
-import migrations from './db/migrations'
+import { en, enTranslations } from '@payloadcms/translations/languages/en'
+import { zh, zhTranslations } from '@payloadcms/translations/languages/zh'
+import { zhTw, zhTwTranslations } from '@payloadcms/translations/languages/zhTw'
+
+//import migrations from './db/migrations'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
-const realpath = (value: string) => (fs.existsSync(value) ? fs.realpathSync(value) : undefined)
 
-const isCLI = process.argv.some((value) => realpath(value).endsWith(path.join('payload', 'bin.js')))
+const isCLI = process.argv.some((value) => value.match(/^(generate|migrate):?/))
 const isProduction = process.env.NODE_ENV === 'production'
 
 const cloudflare =
   isCLI || !isProduction
     ? await getCloudflareContextFromWrangler()
     : await getCloudflareContext({ async: true })
+
+const productPlugin: Plugin = (config) => {
+  config.collections = [...config.collections]
+  return config
+}
 
 export default buildConfig({
   admin: {
@@ -31,7 +38,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media],
+  collections: [Users, Media /* Products */],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
@@ -42,10 +49,31 @@ export default buildConfig({
   }),
   plugins: [
     r2Storage({
-      bucket: cloudflare.env.R2,
+      bucket: cloudflare.env.R2 as any,
       collections: { media: true },
     }),
+    productPlugin,
   ],
+  i18n: {
+    supportedLanguages: { en, zh, 'zh-TW': zhTw },
+    fallbackLanguage: 'en',
+    translations: {
+      en: enTranslations,
+      zh: { ...zhTranslations },
+      'zh-TW': {
+        ...zhTwTranslations,
+      },
+    },
+  },
+  localization: {
+    locales: [
+      { label: 'English', code: 'en' },
+      { label: '繁體中文', code: 'zh-hk', fallbackLocale: 'en' },
+      { label: '简体中文', code: 'zh-cn', fallbackLocale: 'zh-hk' },
+    ],
+    defaultLocale: 'zh-hk',
+    fallback: true,
+  },
 })
 
 // Adapted from https://github.com/opennextjs/opennextjs-cloudflare/blob/d00b3a13e42e65aad76fba41774815726422cc39/packages/cloudflare/src/api/cloudflare-context.ts#L328C36-L328C46
@@ -54,7 +82,8 @@ function getCloudflareContextFromWrangler(): Promise<CloudflareContext> {
     ({ getPlatformProxy }) =>
       getPlatformProxy({
         environment: process.env.CLOUDFLARE_ENV,
-        remoteBindings: isProduction,
+        remoteBindings: true,
+        // remoteBindings: isProduction,
       } satisfies GetPlatformProxyOptions),
   )
 }
