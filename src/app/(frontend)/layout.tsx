@@ -1,6 +1,8 @@
 import React from 'react'
 import './styles.css'
 
+import type { Metadata } from 'next'
+
 export const metadata = {
   description: 'A blank template using Payload in a Next.js app.',
   title: 'Payload Blank Template',
