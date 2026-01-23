@@ -20,7 +20,7 @@ body {
 
     .banner-card-wrapper {
       .banner-card {
-        @apply shadow-md aspect-card-ratio bg-green-800 transform-3d perspective-distant flex flex-col items-center justify-center lg:max-w-[32.3vw] lg:max-h-[72vh] mx-auto bg-[url(/images/common/home_card.jpg)] bg-cover bg-center shadow-2xl/50;
+        @apply shadow-md aspect-card-ratio transform-3d perspective-distant flex flex-col items-center justify-center lg:max-w-[32.3vw] lg:max-h-[72vh] mx-auto bg-[url(/images/common/home_card.jpg)] bg-cover bg-center shadow-2xl/50;
       }
     }
     .banner-title-wrapper {
