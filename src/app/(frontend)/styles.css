@@ -1,7 +1,13 @@
 @import 'tailwindcss';
 
 @theme {
+  --font-Potta-One: 'Potta One', system-ui;
+  --font-Noto-Sans-HK: 'Noto Sans HK', sans-serif;
   --aspect-card-ratio: 1 / calc(sqrt(2));
+}
+
+html {
+  @apply font-Noto-Sans-HK;
 }
 
 .home-banner {
@@ -14,6 +20,15 @@
         .card-title {
           @apply translate-z-8 aspect-square w-40 bg-white;
         }
+      }
+    }
+    .banner-title-wrapper {
+      @apply font-Potta-One text-center;
+      .banner-title {
+        @apply text-3xl;
+      }
+      .banner-subtitle {
+        @apply text-xl;
       }
     }
   }

@@ -17,8 +17,14 @@ export default async function HomePage() {
             </div>
           </div>
           <div className="w-1/2">
-            <div className="banner-title">祝福手繪</div>
-            <div className="banner-subtitle">手繪</div>
+            <div className="banner-title-wrapper">
+              <div className="banner-title">祝福手繪</div>
+              <div className="banner-subtitle">
+                祝福自己祝福他人
+                <br />
+                分享越多祝福越多
+              </div>
+            </div>
           </div>
         </div>
       </div>
