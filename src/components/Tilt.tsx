@@ -8,7 +8,7 @@ const Tilt = ({
   options = {},
   className,
 }: {
-  children: ReactNode
+  children?: ReactNode
   options?: Record<string, unknown>
   className?: string
 }) => {
