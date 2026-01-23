@@ -1,5 +1,20 @@
 @import 'tailwindcss';
 
+@theme {
+  --aspect-card-ratio: 1 / calc(sqrt(2));
+}
+
 .home-banner {
-  @apply w-screen h-screenbg-red-500;
+  @apply w-screen h-screen;
+  .banner-wrapper {
+    @apply w-full h-full container mx-auto flex items-center justify-center gap-4;
+    .banner-card-wrapper {
+      .banner-card {
+        @apply shadow-md aspect-card-ratio bg-green-800 transform-3d perspective-distant flex flex-col items-center justify-center max-w-[32.3vw] max-h-[72vh] mx-auto;
+        .card-title {
+          @apply translate-z-8 aspect-square w-40 bg-white;
+        }
+      }
+    }
+  }
 }
