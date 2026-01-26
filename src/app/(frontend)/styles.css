@@ -14,7 +14,7 @@ body {
 }
 
 .home-banner {
-  @apply w-screen h-screen bg-[url(/images/common/bg.jpg)] bg-cover bg-center;
+  @apply w-screen h-screen bg-[url(/images/common/bg.jpg)] bg-cover bg-center bg-fixed;
   .banner-wrapper {
     @apply w-full h-full container mx-auto flex flex-col lg:flex-row items-center justify-center gap-8;
 

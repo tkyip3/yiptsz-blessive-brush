@@ -1,9 +1,15 @@
 import React from 'react'
 import Tilt from '@/components/Tilt'
 import './styles.css'
+
+import SimpleParallax from 'simple-parallax-js'
+import Image from 'next/image'
 export default async function HomePage() {
   return (
     <>
+      {/* <SimpleParallax>
+        <Image src="/images/common/bg.jpg" alt="image" />
+      </SimpleParallax> */}
       <div className="home-banner">
         <div className="banner-wrapper">
           <div className="w-1/2">
