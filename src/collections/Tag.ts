@@ -11,6 +11,18 @@ export const Tag: CollectionConfig = {
     read: readAccess, // ✅ 允許未登入者讀取
   },
   admin: { useAsTitle: 'name' },
+  hooks: {
+    afterChange: [],
+    beforeValidate: [
+      ({ data, operation }) => {
+        // 仅在创建（create）时自动生成 UUID，避免更新时覆盖
+        if (operation === 'create' && (!data || !data.slug)) {
+          return { ...data, slug: crypto.randomUUID() }
+        }
+        return data
+      },
+    ],
+  },
   fields: [
     {
       name: 'name',
