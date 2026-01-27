@@ -9,6 +9,10 @@ import { r2Storage } from '@payloadcms/storage-r2'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
+import { Products } from './collections/Product'
+import { Event } from './collections/Event'
+import { Category } from './collections/Category'
+import { Tag } from './collections/Tag'
 import { en, enTranslations } from '@payloadcms/translations/languages/en'
 import { zh, zhTranslations } from '@payloadcms/translations/languages/zh'
 import { zhTw, zhTwTranslations } from '@payloadcms/translations/languages/zhTw'
@@ -38,7 +42,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media /* Products */],
+  collections: [Users, Media, Products, Event, Category, Tag],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
