@@ -47,7 +47,7 @@ export default async function HomePage() {
   const eventImages = events.docs.map((event) => ({
     name: event.name,
     slug: event.slug,
-    image: event.images[0], // 假設每個活動至少有一張圖片
+    image: event.images[0].image, // 假設每個活動至少有一張圖片
   }))
 
   return (
