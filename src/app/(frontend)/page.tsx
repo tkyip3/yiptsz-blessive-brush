@@ -44,11 +44,18 @@ export default async function HomePage() {
     depth: 2, // 獲取關聯資料（圖片、分類等）
   })
 
-  const eventImages = events.docs.map((event) => ({
-    name: event.name,
-    slug: event.slug,
-    image: event.images[0].image, // 假設每個活動至少有一張圖片
-  }))
+  const eventImages = events.docs.map((event) => {
+    const image = event.images[0].image
+    const imageUrl = typeof image === 'object' ? image.url : ''
+    return {
+      name: event.name,
+      slug: event.slug,
+      image: {
+        url: imageUrl,
+        alt: event.name,
+      },
+    }
+  })
 
   return (
     <>
