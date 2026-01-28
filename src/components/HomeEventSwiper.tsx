@@ -40,7 +40,7 @@ export default function HomeEventSwiper({ images }: HomeEventSwiperProps) {
   }
 
   return (
-    <div className="relative">
+    <div className="relative ">
       {/* 主圖 Swiper */}
       <Swiper
         style={
