@@ -24,6 +24,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'yiptsz-blessive-brush.tkyip3.workers.dev',
       },
+      {
+        protocol: 'https',
+        hostname: 'instagram.fhkg13-1.fna.fbcdn.net',
+      },
     ],
   },
 }

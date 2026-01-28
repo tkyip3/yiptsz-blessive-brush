@@ -11,6 +11,7 @@ html {
 }
 
 body {
+  @apply text-stone-800;
 }
 
 .home-banner {
@@ -24,7 +25,7 @@ body {
       }
     }
     .banner-title-wrapper {
-      @apply font-Potta-One text-center text-stone-800;
+      @apply font-Potta-One text-center;
       .banner-title {
         @apply text-3xl mb-4 pb-4 md:text-6xl lg:text-8xl xl:text-9xl lg:mb-8 md:pb-8 relative after:content-[''] after:w-16 after:border-b-2 after:border-stone-800 after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2;
       }
@@ -32,6 +33,54 @@ body {
         @apply text-xl md:text-2xl lg:text-4xl;
         p {
           @apply mb-1 lg:mb-3;
+        }
+      }
+    }
+  }
+}
+
+.home-section {
+  @apply flex items-center justify-center;
+  .home-product,
+  .home-event {
+    @apply max-w-full 2xl:max-w-3xl xl:max-w-xl lg:max-w-lg px-4;
+  }
+  home-product-container,
+  home-event-container {
+    @apply p-4;
+  }
+  .home-product-title,
+  .home-wvwnt-title {
+    @apply font-Potta-One text-center text-xl md:text-2xl lg:text-4xl;
+  }
+}
+
+.home-product {
+  @apply lg:ml-auto;
+  .home-product-container {
+    .home-product-list {
+      @apply flex flex-col gap-8;
+      .product-item {
+        @apply w-full 2xl:w-2xl xl:w-lg lg:w-md aspect-square mx-auto relative inline-block;
+        .item-cover {
+          @apply absolute top-0 left-0 w-full h-full z-10;
+          img {
+            @apply object-cover rounded-xl overflow-hidden;
+          }
+        }
+        .item-main {
+          @apply shadow-xl/20;
+        }
+        .item-cover,
+        .item-main {
+          @apply transition-transform duration-300 shadow-xl/20 p-2 rounded-2xl backdrop-blur-lg;
+        }
+        &:hover {
+          .item-cover {
+            @apply scale-105 -translate-x-20;
+          }
+          .item-main {
+          }
         }
       }
     }
