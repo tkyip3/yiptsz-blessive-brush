@@ -64,7 +64,7 @@ body {
     .home-product-list {
       @apply flex flex-col gap-8;
       .product-item {
-        @apply w-1/2 sm:w-9/20 2xl:w-sm xl:w-2xs lg:w-[12rem] md:w-3xs aspect-square mx-auto relative flex items-center justify-center;
+        @apply w-1/2 sm:w-9/20 2xl:w-2xs xl:w-[14rem] lg:w-[12rem] md:w-3xs aspect-square mx-auto relative flex items-center justify-center;
         .item-cover {
           @apply absolute top-0 left-0 w-full h-full z-10 rounded-2xl p-2;
           img {
