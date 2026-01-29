@@ -9,6 +9,8 @@ import { getPayload } from 'payload'
 import config from '@payload-config'
 import Link from 'next/link'
 
+import { Button } from '@/components/ui/button'
+
 import HomeEventSwiper from '@/components/HomeEventSwiper'
 
 export default async function HomePage() {
@@ -90,11 +92,7 @@ export default async function HomePage() {
             {products.docs.length > 0 ? (
               <div className="home-product-list">
                 {products.docs.map((product) => (
-                  <Link
-                    key={product.id}
-                    href={`/products/${product.slug}`}
-                    className="product-item"
-                  >
+                  <div key={product.id} className="product-item">
                     <div className="item-cover">
                       <Image
                         key={product.id}
@@ -106,9 +104,14 @@ export default async function HomePage() {
                     </div>
                     <div className="item-main">
                       <div className="item-name">{product.name}</div>
-                      <div className="item-price">{product.price}</div>
+                      <div className="item-price">HKD {product.price}</div>
+                      <div className="item-btn">
+                        <Button asChild>
+                          <Link href={`/products/${product.slug}`}>查看詳細</Link>
+                        </Button>
+                      </div>
                     </div>
-                  </Link>
+                  </div>
                 ))}
               </div>
             ) : (

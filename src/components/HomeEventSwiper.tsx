@@ -29,8 +29,6 @@ interface HomeEventSwiperProps {
 export default function HomeEventSwiper({ images }: HomeEventSwiperProps) {
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null)
 
-  console.log(images)
-
   if (!images || images.length === 0) {
     return (
       <div className="bg-base-200 aspect-square rounded-lg flex items-center justify-center">
