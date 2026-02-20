@@ -120,60 +120,9 @@ export const Products: CollectionConfig = {
       type: 'array',
       fields: [
         {
-          name: 'type',
-          type: 'radio',
-          options: [
-            {
-              label: {
-                'zh-TW': '上傳圖片',
-                en: 'Upload Image',
-              },
-              value: 'upload',
-            },
-            {
-              label: {
-                'zh-TW': '外部網址',
-                en: 'External URL',
-              },
-              value: 'url',
-            },
-          ],
-          defaultValue: 'upload',
-          required: true,
-        },
-        {
           name: 'image',
           type: 'upload',
           relationTo: 'media',
-          admin: {
-            condition: (_, { type }) => type === 'upload',
-          },
-        },
-        {
-          name: 'url',
-          type: 'text',
-          admin: {
-            condition: (_, { type }) => type === 'url',
-          },
-          validate: (value: string | undefined, { type }: { type: string }) => {
-            if (type === 'url') {
-              try {
-                new URL(value)
-                return true
-              } catch {
-                return '請輸入有效的URL'
-              }
-            }
-            return true
-          },
-        },
-        {
-          name: 'alt',
-          type: 'text',
-          label: {
-            'zh-TW': '替代文字',
-            en: 'Alt Text',
-          },
         },
       ],
       label: {

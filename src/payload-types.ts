@@ -186,10 +186,7 @@ export interface Product {
   stock?: number | null;
   images?:
     | {
-        type: 'upload' | 'url';
         image?: (number | null) | Media;
-        url?: string | null;
-        alt?: string | null;
         id?: string | null;
       }[]
     | null;
@@ -390,10 +387,7 @@ export interface ProductsSelect<T extends boolean = true> {
   images?:
     | T
     | {
-        type?: T;
         image?: T;
-        url?: T;
-        alt?: T;
         id?: T;
       };
   homepageIndex?: T;

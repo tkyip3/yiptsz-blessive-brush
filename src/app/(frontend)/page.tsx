@@ -9,9 +9,10 @@ import { getPayload } from 'payload'
 import config from '@payload-config'
 import Link from 'next/link'
 
-import { Button } from '@/components/ui/button'
+import { Button } from '@radix-ui/themes'
 
 import HomeEventSwiper from '@/components/HomeEventSwiper'
+import type { Product } from '@/payload-types'
 
 export default async function HomePage() {
   const payload = await getPayload({ config })
@@ -91,28 +92,34 @@ export default async function HomePage() {
             <div className="home-product-title">精選作品</div>
             {products.docs.length > 0 ? (
               <div className="home-product-list">
-                {products.docs.map((product) => (
-                  <div key={product.id} className="product-item">
-                    <div className="item-cover">
-                      <Image
-                        key={product.id}
-                        src={product.images[0].url}
-                        alt={product.name}
-                        width={300}
-                        height={300}
-                      />
-                    </div>
-                    <div className="item-main">
-                      <div className="item-name">{product.name}</div>
-                      <div className="item-price">HKD {product.price}</div>
-                      <div className="item-btn">
-                        <Button asChild>
-                          <Link href={`/products/${product.slug}`}>查看詳細</Link>
-                        </Button>
+                {products.docs.map((product: Product) => {
+                  return (
+                    <div key={product.id} className="product-item">
+                      <div className="item-cover">
+                        <Image
+                          key={product.id}
+                          src={
+                            typeof product.images[0].image === 'object'
+                              ? product.images[0].image.url
+                              : ''
+                          }
+                          alt={product.name}
+                          width={300}
+                          height={300}
+                        />
+                      </div>
+                      <div className="item-main">
+                        <div className="item-name">{product.name}</div>
+                        <div className="item-price">HKD {product.price}</div>
+                        <div className="item-btn">
+                          <Button>
+                            <Link href={`/products/${product.slug}`}>查看詳細</Link>
+                          </Button>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  )
+                })}
               </div>
             ) : (
               <div>未有作品可顯示</div>

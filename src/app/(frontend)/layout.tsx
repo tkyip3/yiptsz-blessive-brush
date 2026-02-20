@@ -5,6 +5,8 @@ import type { Metadata } from 'next'
 
 import Footer from '@/components/Footer'
 
+import { Theme } from '@radix-ui/themes'
+
 export const metadata = {
   description: 'A blank template using Payload in a Next.js app.',
   title: 'Payload Blank Template',
@@ -24,8 +26,10 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
         />
       </head>
       <body>
-        <main>{children}</main>
-        <Footer />
+        <Theme accentColor="violet">
+          <main>{children}</main>
+          <Footer />
+        </Theme>
       </body>
     </html>
   )
