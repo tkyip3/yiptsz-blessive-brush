@@ -9,10 +9,10 @@ import { getPayload } from 'payload'
 import config from '@payload-config'
 import Link from 'next/link'
 
-import { Button } from '@radix-ui/themes'
-
 import HomeEventSwiper from '@/components/HomeEventSwiper'
 import type { Product } from '@/payload-types'
+
+import { Button } from '@/components/ui/button'
 
 export default async function HomePage() {
   const payload = await getPayload({ config })
