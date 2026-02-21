@@ -212,13 +212,6 @@ export default async function ProductDetail({
             <BuyButtons
               productName={String(product.name)}
               productId={String(product.id)}
-              productSubItems={
-                (product.subitems?.map((item) => ({
-                  id: item.id!,
-                  name: item.name || '', // 确保name存在，即使为空字符串
-                  // 如果还有其他必需字段，也需要在这里添加
-                })) as Subitem[]) || []
-              }
               stock={product.stock ?? 0}
               price={parseFloat(displayPrice)}
               images={buyImages}
