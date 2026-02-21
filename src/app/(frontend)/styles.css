@@ -1,7 +1,6 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
-//pnpm dlx shadcn@latest create
-
+/*pnpm dlx shadcn@latest create*/
 
 @custom-variant dark (&:is(.dark *));
 
