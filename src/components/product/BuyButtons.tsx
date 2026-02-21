@@ -2,7 +2,6 @@
 'use client'
 
 import { useState } from 'react'
-import { ProductOptions } from './ProductOptions'
 
 // ===== LocalStorage 操作工具函數 =====
 const CART_KEY = 'cart'
@@ -129,33 +128,23 @@ export default function BuyButtons({
     <div className="mt-6 flex flex-col gap-3">
       {/* ===== 馬上購買表單 ===== */}
       <form action="/apis/checkout" method="post">
-        <input
-          type="hidden"
-          name="productName"
-          value={`${productName} ${productSubItems.find((item) => item.id === selectedId)?.name ? ` - ${productSubItems.find((item) => item.id === selectedId)?.name}` : ''}`}
-        />
+        <input type="hidden" name="productName" value={productName} />
         <input type="hidden" name="productId" value={productId} />
         <input type="hidden" name="slug" value={slug} />
         <input type="hidden" name="quantity" value={quantity} />
         <input type="hidden" name="price" value={price} />
         <input type="hidden" name="images" value={JSON.stringify(images)} />
-        <input
+        {/* <input
           type="hidden"
           name="selectedItem"
           value={productSubItems.find((item) => item.id === selectedId)?.name}
-        />
+        /> */}
 
-        {productSubItems && productSubItems.length > 0 && (
+        {/* {productSubItems && productSubItems.length > 0 && (
           <div className="prose max-w-none mb-6">
             <div className="divider divider-start font-bold text-xl divider-primary">
               請選擇款式
             </div>
-
-            {/* {selectedId && (
-              <div className="mb-2 text-primary font-medium">
-                已選擇：{productSubItems.find((item) => item.id === selectedId)?.name}
-              </div>
-            )} */}
 
             <div className="join w-full">
               {productSubItems.map((item) => (
@@ -172,7 +161,7 @@ export default function BuyButtons({
               ))}
             </div>
           </div>
-        )}
+        )} */}
 
         {stock > 1 && (
           <label className="form-control w-full">
