@@ -4,6 +4,15 @@
 import { useRouter, useSearchParams } from 'next/navigation'
 import { ChangeEvent } from 'react'
 
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
+
 interface FilterControlsProps {
   categories: Array<{ id: string; name: string }>
   tags: Array<{ id: string; name: string }>
@@ -18,10 +27,10 @@ export default function FilterControls({ categories, tags }: FilterControlsProps
 
   const handleFilterChange = (key: string, value: string) => {
     const params = new URLSearchParams(searchParams.toString())
-    if (value) {
-      params.set(key, value)
-    } else {
+    if (!value || value === 'all') {
       params.delete(key)
+    } else {
+      params.set(key, value)
     }
     params.set('page', '1') // 切換篩選時重置頁碼
     router.push(`?${params.toString()}`)
@@ -49,6 +58,27 @@ export default function FilterControls({ categories, tags }: FilterControlsProps
             </option>
           ))}
         </select>
+
+        <Select
+          value={currentCategory}
+          onValueChange={(value) => handleFilterChange('category', value)}
+        >
+          <SelectTrigger className="w-full ">
+            <SelectValue placeholder="選擇分類" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              <SelectItem key={'all'} value={'all'}>
+                全部分類
+              </SelectItem>
+              {categories.map((cat) => (
+                <SelectItem key={`cat-${cat.id}`} value={cat.id}>
+                  {cat.name}
+                </SelectItem>
+              ))}
+            </SelectGroup>
+          </SelectContent>
+        </Select>
       </div>
 
       {/* Tag */}
@@ -71,6 +101,24 @@ export default function FilterControls({ categories, tags }: FilterControlsProps
             </option>
           ))}
         </select>
+
+        <Select value={currentTag} onValueChange={(value) => handleFilterChange('tag', value)}>
+          <SelectTrigger className="w-full ">
+            <SelectValue placeholder="選擇標籤" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              <SelectItem key={'all'} value={'all'}>
+                全部標籤
+              </SelectItem>
+              {tags.map((tag) => (
+                <SelectItem key={`tag-${tag.id}`} value={tag.id}>
+                  {tag.name}
+                </SelectItem>
+              ))}
+            </SelectGroup>
+          </SelectContent>
+        </Select>
       </div>
     </div>
   )

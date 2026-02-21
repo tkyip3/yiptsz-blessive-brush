@@ -4,6 +4,9 @@ import Image from 'next/image'
 import type { Product } from '@/payload-types'
 
 import { Icon } from '@iconify/react'
+
+import { Button } from '@/components/ui/button'
+
 export default function ProductItem({ product }: { product: Product }) {
   const p = product
 
