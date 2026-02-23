@@ -78,22 +78,24 @@ export default async function ProductList({
   }))
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-xl font-bold text-center mb-8">商品列表</h1>
-      {/* 篩選欄 */}
-      <FilterControls categories={transformedCategories} tags={transformedTags} />
-      {products.length === 0 ? (
-        <p className="text-center">未有相關商品</p>
-      ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {products.map((p: Product) => (
-            <ProductItem key={p.id} product={p} />
-          ))}
-        </div>
-      )}
+    <div className="products-bg">
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-xl font-bold text-center mb-8">商品列表</h1>
+        {/* 篩選欄 */}
+        <FilterControls categories={transformedCategories} tags={transformedTags} />
+        {products.length === 0 ? (
+          <p className="text-center">未有相關商品</p>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {products.map((p: Product) => (
+              <ProductItem key={p.id} product={p} />
+            ))}
+          </div>
+        )}
 
-      {/* 分頁 */}
-      <ProductPagination totalPages={totalPages} category={category} tag={tag} />
+        {/* 分頁 */}
+        <ProductPagination totalPages={totalPages} category={category} tag={tag} />
+      </div>
     </div>
   )
 }

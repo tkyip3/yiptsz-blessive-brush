@@ -127,6 +127,52 @@ body {
   }
 }
 
+.products-bg {
+  @apply bg-[url(/images/products/bg.jpg)] bg-cover bg-center bg-fixed;
+}
+
+.products-item {
+  @apply bg-white/50 w-full shadow-sm overflow-hidden backdrop-blur-sm rounded-2xl p-2 transition-all duration-300;
+  .item-title {
+    @apply text-lg font-semibold px-3 pb-0.5 bg-primary rounded-4xl text-white text-shadow-sm/20 truncate;
+  }
+  .item-img {
+    @apply aspect-square relative rounded-xl overflow-hidden my-2;
+    .img-wrapper {
+      @apply aspect-square;
+      img {
+        @apply w-full h-full object-cover transition-all duration-300;
+      }
+      &.wrapper-icon {
+        @apply flex items-center justify-center p-4 bg-gray-900/50;
+      }
+    }
+  }
+  &:hover {
+    @apply shadow-lg/30 -translate-y-1;
+    .item-img {
+      .img-wrapper {
+        img {
+          @apply scale-105;
+        }
+      }
+    }
+  }
+  .item-main {
+    @apply flex gap-2 w-full items-center;
+    .item-price {
+      @apply text-xl font-bold flex-1;
+    }
+  }
+}
+
+.product-gallery {
+  @apply relative aspect-square w-full rounded-lg overflow-hidden backdrop-blur-sm;
+  &.gallery-icon {
+    @apply flex items-center justify-center;
+  }
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
