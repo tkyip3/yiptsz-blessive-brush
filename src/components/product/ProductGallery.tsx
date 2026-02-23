@@ -75,10 +75,10 @@ export default function ProductGallery({ images, sellout }: ProductGalleryProps)
           freeMode={true}
           watchSlidesProgress={true}
           modules={[FreeMode, Navigation, Thumbs]}
-          className="mySwiper mt-4 !h-20"
+          className="mySwiper mt-4 h-20"
         >
           {images.map((item, i) => (
-            <SwiperSlide key={i} className="!h-full">
+            <SwiperSlide key={i} className="h-full">
               <div className="relative w-full h-full rounded border border-base-300 overflow-hidden">
                 <Image
                   src={item.image.url}

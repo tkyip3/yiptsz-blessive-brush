@@ -85,10 +85,10 @@ export default function BuyButtons({
 
     // 檢查是否已存在此商品
     const existingIndex = currentCart.findIndex((item: any) => item.productId === productId)
-    const pName = `${productName} ${productSubItems.find((item) => item.id === selectedId)?.name ? ` - ${productSubItems.find((item) => item.id === selectedId)?.name}` : ''}`
+    //const pName = `${productName} ${productSubItems.find((item) => item.id === selectedId)?.name ? ` - ${productSubItems.find((item) => item.id === selectedId)?.name}` : ''}`
     const cartItem = {
       productId,
-      productName: pName,
+      productName,
       slug,
       quantity: Math.min(quantity, stock),
       stock,
@@ -113,12 +113,12 @@ export default function BuyButtons({
       newCart[existingIndex] = { ...newCart[existingIndex], quantity: newQty, stock: stock }
 
       // 累加成功提示
-      alert(`✅「${pName}」數量已更新為 ${newQty} 件！`)
+      alert(`✅「${productName}」數量已更新為 ${newQty} 件！`)
     } else {
       newCart = [...currentCart, cartItem]
 
       // 首次加入提示
-      alert(`✅「${pName}」x${quantity} 已加入購物車！`)
+      alert(`✅「${productName}」x${quantity} 已加入購物車！`)
     }
 
     // 儲存並重置數量
