@@ -3,6 +3,8 @@
 
 import { useState } from 'react'
 
+import { Button } from '@/components/ui/button'
+
 // ===== LocalStorage 操作工具函數 =====
 const CART_KEY = 'cart'
 
@@ -134,34 +136,6 @@ export default function BuyButtons({
         <input type="hidden" name="quantity" value={quantity} />
         <input type="hidden" name="price" value={price} />
         <input type="hidden" name="images" value={JSON.stringify(images)} />
-        {/* <input
-          type="hidden"
-          name="selectedItem"
-          value={productSubItems.find((item) => item.id === selectedId)?.name}
-        /> */}
-
-        {/* {productSubItems && productSubItems.length > 0 && (
-          <div className="prose max-w-none mb-6">
-            <div className="divider divider-start font-bold text-xl divider-primary">
-              請選擇款式
-            </div>
-
-            <div className="join w-full">
-              {productSubItems.map((item) => (
-                <input
-                  key={item.id}
-                  className={`join-item btn flex-1 ${selectedId === item.id ? 'btn-active' : ''}`}
-                  type="radio"
-                  name="subitem-options"
-                  value={item.id}
-                  checked={selectedId === item.id}
-                  onChange={(e) => setSelectedId(e.target.value)}
-                  aria-label={item.name}
-                />
-              ))}
-            </div>
-          </div>
-        )} */}
 
         {stock > 1 && (
           <label className="form-control w-full">
@@ -183,7 +157,7 @@ export default function BuyButtons({
           </label>
         )}
 
-        <label className="form-control w-full">
+        {/* <label className="form-control w-full">
           <div className="label mb-2">
             <span className="label-text font-medium">
               備註 <small>(選填)</small>
@@ -195,26 +169,26 @@ export default function BuyButtons({
             id="description"
             onChange={(e) => setDescription(e.target.value)}
           ></textarea>
-        </label>
+        </label> */}
 
-        <button
-          className="btn btn-accent w-full"
+        <Button
+          className="bg-green-500 hover:bg-green-400 w-full"
           disabled={stock === 0 || loading}
           // onClick={handleBuyNow}
         >
           {loading ? '處理中...' : stock === 0 ? '已售罄' : '馬上購買'}
-        </button>
+        </Button>
       </form>
 
       {/* ===== 恢復並優化的加入購物車按鈕 ===== */}
-      <button
-        className="btn btn-primary w-full"
+      <Button
+        className="w-full"
         disabled={stock === 0}
         onClick={handleAddToCart}
         aria-label={`加入購物車：${productName}`}
       >
         {stock === 0 ? '已售罄' : '加入購物車'}
-      </button>
+      </Button>
     </div>
   )
 }
