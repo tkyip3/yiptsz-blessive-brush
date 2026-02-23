@@ -10,6 +10,8 @@ import type { Metadata } from 'next'
 import type { Product } from '@/payload-types'
 import { Icon } from '@iconify/react'
 
+import { Badge } from '@/components/ui/badge'
+
 interface Subitem {
   id: string
   name: string
@@ -143,20 +145,21 @@ export default async function ProductDetail({
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="space-y-4">
-          {product.images && product.images.length > 0 ? (
-            <div className="relative w-full bg-gray-900/50 rounded-lg overflow-hidden backdrop-blur-sm">
-              <ProductGallery images={galleryImages} sellout={product.stock === 0} />
-            </div>
-          ) : (
-            <div className="aspect-square w-full bg-gray-900/50 rounded-lg flex items-center justify-center backdrop-blur-sm">
-              <Icon icon="line-md:image-twotone" width="6em" height="6em" />
-            </div>
-          )}
+    <div className="products-bg">
+      <div className="container mx-auto px-4 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="space-y-4">
+            {product.images && product.images.length > 0 ? (
+              <div className="product-gallery">
+                <ProductGallery images={galleryImages} sellout={product.stock === 0} />
+              </div>
+            ) : (
+              <div className="product-gallery gallery-icon">
+                <Icon icon="line-md:image-twotone" width="6em" height="6em" />
+              </div>
+            )}
 
-          {/* {product.images.length > 1 && (
+            {/* {product.images.length > 1 && (
             <div className="flex gap-2 overflow-x-auto pb-2">
               {product.images.slice(1).map((img, i) => (
                 <div key={i} className="relative w-16 h-16 flex-shrink-0 rounded border">
@@ -170,53 +173,51 @@ export default async function ProductDetail({
               ))}
             </div>
           )} */}
-        </div>
+          </div>
 
-        <div>
-          {product.stock === 0 ? (
-            <span className="badge badge-error mb-4">售罄</span>
-          ) : (
-            <span className="badge badge-success mb-4">有現貨</span>
-          )}
-          <h1 className="text-xl font-bold mb-2">{product.name}</h1>
-          {product.categories.length > 0 && (
-            <div>
-              {product.categories.map((cat) => {
-                if (typeof cat === 'number') return null
-                return (
-                  <Link
-                    key={cat.id}
-                    href={`/categories/${cat.slug}`}
-                    className="badge badge-primary mb-2 mr-2 hover:shadow-md/30 hover:-translate-y-[2px] transition"
-                  >
-                    {cat.name}
-                  </Link>
-                )
-              })}
-            </div>
-          )}
-          <p className="text-xl font-black mb-8">
-            {product.currency?.toUpperCase()} {displayPrice}
-          </p>
-
-          {product.description && (
-            <div className="prose max-w-none mb-6">
-              <div className="divider divider-start font-bold text-xl divider-primary">
-                商品描述
+          <div>
+            {product.stock === 0 ? (
+              <Badge className="bg-red-500 mb-4">售罄</Badge>
+            ) : (
+              <Badge className="bg-green-500 mb-4">有現貨</Badge>
+            )}
+            <h1 className="product-title">{product.name}</h1>
+            {product.categories.length > 0 && (
+              <div>
+                {product.categories.map((cat) => {
+                  if (typeof cat === 'number') return null
+                  return (
+                    <Link key={cat.id} href={`/categories/${cat.slug}`}>
+                      <Badge className="mb-2 mr-2 hover:shadow-md/30 hover:-translate-y-[2px] transition">
+                        {cat.name}
+                      </Badge>
+                    </Link>
+                  )
+                })}
               </div>
-              <pre>{product.description}</pre>
-            </div>
-          )}
+            )}
 
-          <div className="mt-6">
-            <BuyButtons
-              productName={String(product.name)}
-              productId={String(product.id)}
-              stock={product.stock ?? 0}
-              price={parseFloat(displayPrice)}
-              images={buyImages}
-              slug={slug}
-            />
+            <p className="product-price">
+              {product.currency?.toUpperCase()} {displayPrice}
+            </p>
+
+            {product.description && (
+              <div className="product-description">
+                <div className="description-title">商品描述</div>
+                <pre>{product.description}</pre>
+              </div>
+            )}
+
+            <div className="mt-6">
+              <BuyButtons
+                productName={String(product.name)}
+                productId={String(product.id)}
+                stock={product.stock ?? 0}
+                price={parseFloat(displayPrice)}
+                images={buyImages}
+                slug={slug}
+              />
+            </div>
           </div>
         </div>
       </div>

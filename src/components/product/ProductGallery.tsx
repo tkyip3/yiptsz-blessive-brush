@@ -48,7 +48,7 @@ export default function ProductGallery({ images, sellout }: ProductGalleryProps)
         navigation={true}
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper2 !rounded-lg overflow-hidden"
+        className="mySwiper2 rounded-lg overflow-hidden bg-gray-900/50"
       >
         {images.map((item, i) => (
           <SwiperSlide key={i}>

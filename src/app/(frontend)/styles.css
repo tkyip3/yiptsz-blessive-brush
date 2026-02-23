@@ -129,6 +129,18 @@ body {
 
 .products-bg {
   @apply bg-[url(/images/products/bg.jpg)] bg-cover bg-center bg-fixed;
+  .product-title {
+    @apply text-2xl font-bold mb-2;
+  }
+  .product-price {
+    @apply text-xl font-black mb-8;
+  }
+  .product-description {
+    @apply max-w-none mb-6;
+    .description-title {
+      @apply font-bold text-xl;
+    }
+  }
 }
 
 .products-item {
@@ -167,9 +179,9 @@ body {
 }
 
 .product-gallery {
-  @apply relative aspect-square w-full rounded-lg overflow-hidden backdrop-blur-sm;
+  @apply relative w-full rounded-lg overflow-hidden backdrop-blur-sm;
   &.gallery-icon {
-    @apply flex items-center justify-center;
+    @apply aspect-square flex items-center justify-center;
   }
 }
 
