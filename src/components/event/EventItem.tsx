@@ -12,7 +12,7 @@ export default function EventItem({ event }: { event: Event }) {
   const e = event
 
   return (
-    <Link href={`/event/${e.slug}`} key={e.id} className="events-item">
+    <Link href={`/events/${e.slug}`} key={e.id} className="events-item">
       <div className="item-img">
         {e.images &&
           (e.images.length > 0 ? (
