@@ -106,6 +106,7 @@ export default async function HomePage() {
                           alt={product.name}
                           width={300}
                           height={300}
+                          unoptimized
                         />
                       </div>
                       <div className="item-main">
