@@ -212,9 +212,9 @@ function EmptyCart() {
       <div className="text-6xl mb-4">🛒</div>
       <h2 className="text-2xl font-bold mb-2">購物車是空的</h2>
       <p className="text-base-content/70 mb-6">快去挑選喜歡的商品吧！</p>
-      <Link href="/" className="btn btn-primary">
-        前往商品列表
-      </Link>
+      <Button>
+        <Link href="/products">前往商品列表</Link>
+      </Button>
     </div>
   )
 }
