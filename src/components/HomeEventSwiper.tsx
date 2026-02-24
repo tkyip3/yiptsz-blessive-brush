@@ -55,7 +55,7 @@ export default function HomeEventSwiper({ images }: HomeEventSwiperProps) {
         {images.map((item, i) => (
           <SwiperSlide key={i}>
             <div className="relative aspect-card-ratio">
-              <Link href={`/event/${item.slug}`}>
+              <Link href={`/events/${item.slug}`}>
                 <Image
                   src={item.image.url}
                   alt={item.image.alt || item.name || `商品圖片 ${i + 1}`}

@@ -25,6 +25,9 @@ export default function Header() {
               <a href="/products" className="menu-item">
                 所有貨品
               </a>
+              <a href="/events" className="menu-item">
+                所有活動
+              </a>
               <a href="/cart" className="menu-item">
                 購物車
               </a>
