@@ -3,6 +3,7 @@ import './styles.css'
 
 import type { Metadata } from 'next'
 
+import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
 export const metadata = {
@@ -24,6 +25,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
         />
       </head>
       <body>
+        <Header />
         <main>{children}</main>
         <Footer />
       </body>

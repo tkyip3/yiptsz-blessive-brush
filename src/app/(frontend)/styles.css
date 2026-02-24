@@ -18,8 +18,49 @@ body {
   @apply text-stone-800;
 }
 
+.liquidGlass-wrapper {
+  @apply relative size-full flex font-semibold shadow-lg transition-all duration-300 ease-[cubic-bezier(0.175,0.885,0.32,2.2)];
+
+  .liquidGlass-effect {
+    @apply absolute z-0 backdrop-blur-xs overflow-hidden inset-0;
+    filter: url(#glass-distortion);
+  }
+
+  .liquidGlass-tint {
+    @apply z-1 absolute inset-0 bg-white/5;
+  }
+
+  .liquidGlass-shine {
+    @apply absolute z-2 overflow-hidden inset-shadow-sm inset-shadow-gray-100 inset-0;
+  }
+
+  .liquidGlass-main {
+    @apply z-3 w-full;
+  }
+}
+
+header {
+  @apply w-full h-full fixed top-0 left-0 z-20 bg-white/87 opacity-0 invisible transition-all duration-500;
+  .header-menu {
+    @apply h-screen flex flex-col justify-center items-center;
+    a {
+      @apply w-full text-center p-2 hover:bg-primary hover:text-white transition-all duration-300;
+    }
+    button {
+      @apply rounded-full mt-8 w-10 h-10 flex items-center justify-center hover:-translate-y-0.5 hover:shadow-md;
+    }
+  }
+  &.active {
+    @apply opacity-100 visible;
+  }
+}
+
+.header-btn {
+  @apply w-10 h-10 flex items-center justify-center fixed top-2 right-2 z-10 rounded-full bg-primary text-white hover:-translate-y-0.5 hover:shadow-md hover:bg-violet-500;
+}
+
 .home-banner {
-  @apply w-full h-screen bg-[url(/images/common/bg.jpg)] bg-cover bg-center bg-fixed;
+  @apply w-full h-screen bg-[url(/images/common/bg.jpg)] bg-cover bg-center bg-fixed z-20;
   .banner-wrapper {
     @apply w-full h-full container mx-auto flex flex-col lg:flex-row items-center justify-center gap-8;
 
