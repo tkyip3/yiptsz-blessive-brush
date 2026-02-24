@@ -22,7 +22,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'yiptsz-blessive-brush-production.tkyip3.workers.dev',
+        hostname: 'yiptsz-blessive-brush.tkyip3.workers.dev',
       },
       {
         protocol: 'https',
