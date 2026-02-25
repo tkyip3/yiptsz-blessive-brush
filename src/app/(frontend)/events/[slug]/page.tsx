@@ -42,8 +42,8 @@ export async function generateMetadata({
       ? `${baseUrl}${(product.images[0].image as { url: string }).url}`
       : undefined
 
-  const title = product ? `${product.name} | HK LK Store 網上商店` : '商品未找到'
-  const description = product?.description || '商品詳情'
+  const title = product ? `${product.name} | YipTsz Blessive Brush` : '活動未找到'
+  const description = product?.description || '活動詳情'
 
   return {
     title,
@@ -77,11 +77,11 @@ export default async function ProductDetail({
           <div className="flex gap-2 justify-center">
             <Icon icon="line-md:line-md:alert-loop" width="4em" height="4em" />
           </div>
-          <h1 className="text-xl font-bold ">未找到相關商品</h1>
-          <p className="">你所找的商品不存在或已經下架，歡迎遊覽其他商品。</p>
+          <h1 className="text-xl font-bold ">未找到相關活動</h1>
+          <p className="">你所找的活動不存在或已經下架，歡迎遊覽其他活動。</p>
           <p className="flex gap-2 justify-center">
             <Link className="btn btn-primary" href={'/prouducts'}>
-              返回購物頁面
+              返回活動頁面
             </Link>
             <Link className="btn btn-primary" href={'/'}>
               返回主頁
@@ -131,7 +131,7 @@ export default async function ProductDetail({
 
             {event.description && (
               <div className="event-description">
-                <div className="description-title">商品描述</div>
+                <div className="description-title">活動描述</div>
                 <pre>{event.description}</pre>
               </div>
             )}

@@ -42,7 +42,7 @@ export async function generateMetadata({
       ? `${baseUrl}${(product.images[0].image as { url: string }).url}`
       : undefined
 
-  const title = product ? `${product.name} | HK LK Store 網上商店` : '商品未找到'
+  const title = product ? `${product.name} | YipTsz Blessive Brush` : '商品未找到'
   const description = product?.description || '商品詳情'
 
   return {
