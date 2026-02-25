@@ -282,6 +282,10 @@ footer {
   }
 }
 
+.checkout-bg {
+  @apply bg-[url(/images/products/bg.jpg)] bg-cover bg-center bg-fixed flex items-center justify-center min-h-screen;
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);

@@ -5,6 +5,7 @@ import { getPayload } from 'payload'
 import { Stripe } from 'stripe'
 import config from '@/payload.config'
 import nodemailer from 'nodemailer'
+import { Button } from '@/components/ui/button'
 
 // ===== 發送郵件給 admin 的函數 =====
 async function sendAdminEmail(session: any) {
@@ -167,31 +168,33 @@ export default async function Success({
   }
 
   return (
-    <div className="container mx-auto px-4 h-full">
-      <div className="flex flex-col justify-center text-center gap-4">
-        <div className="flex gap-2 justify-center">
-          <Icon
-            icon="line-md:circle-to-confirm-circle-twotone-transition"
-            width="4em"
-            height="4em"
-          />
-        </div>
+    <div className="checkout-bg">
+      <div className="container mx-auto px-4 h-full">
+        <div className="flex flex-col justify-center text-center gap-4">
+          <div className="flex gap-2 justify-center">
+            <Icon
+              icon="line-md:circle-to-confirm-circle-twotone-transition"
+              width="4em"
+              height="4em"
+            />
+          </div>
 
-        <h1 className="text-xl font-bold">已完成交易</h1>
+          <h1 className="text-xl font-bold">已完成交易</h1>
 
-        {/* {stockUpdateResult?.success ? (
+          {/* {stockUpdateResult?.success ? (
           <p className="text-green-600">✓ 庫存已更新</p>
         ) : stockUpdateResult ? (
           <p className="text-yellow-600">⚠ 訂單已完成，但庫存更新遇到問題</p>
         ) : null} */}
 
-        <p>感謝你的購買。</p>
+          <p>感謝你的購買。</p>
 
-        <p className="flex gap-2 justify-center">
-          <Link className="btn btn-primary" href={'/'}>
-            返回主頁
-          </Link>
-        </p>
+          <p className="flex gap-2 justify-center">
+            <Link className="btn btn-primary" href={'/'}>
+              <Button>返回主頁</Button>
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   )
