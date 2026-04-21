@@ -33,7 +33,7 @@ async function sendAdminEmail(session: any) {
     })
 
     const mailOptions = {
-      from: `"HK LK Store" <${process.env.ADMIN_EMAIL}>`,
+      from: `"YipTsz Blessive Brush" <${process.env.ADMIN_EMAIL}>`,
       to: process.env.ADMIN_EMAIL,
       subject: `💰 付款成功通知 - $${amount} HKD`,
       html: `
