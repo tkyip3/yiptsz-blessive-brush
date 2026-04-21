@@ -130,7 +130,7 @@ export default async function HomePage() {
         <div className="home-event">
           <div className="home-event-container">
             <div className="home-event-title">最新活動</div>
-            {products.docs.length > 0 ? (
+            {events.docs.length > 0 ? (
               <div className="home-event-swiper">
                 <HomeEventSwiper images={eventImages} />
               </div>
