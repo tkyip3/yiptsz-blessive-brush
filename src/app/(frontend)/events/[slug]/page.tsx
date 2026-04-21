@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import BuyButtons from '@/components/product/BuyButtons'
+import { Button } from '@/components/ui/button'
 
 import ProductGallery from '@/components/product/ProductGallery'
 
@@ -135,6 +135,15 @@ export default async function ProductDetail({
                 <pre>{event.description}</pre>
               </div>
             )}
+
+            <Button className="event-btn">
+              <Link
+                href={`https://wa.me/85295895746?text=你好，我想查詢預約有關「${event.name}」的課程。`}
+              >
+                <Icon icon="mdi:whatsapp" width="6em" height="6em" />
+                WhatsApp 查詢預約
+              </Link>
+            </Button>
           </div>
         </div>
       </div>

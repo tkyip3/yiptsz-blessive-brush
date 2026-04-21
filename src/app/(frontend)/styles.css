@@ -201,6 +201,15 @@ footer {
     .description-title {
       @apply font-bold text-xl;
     }
+    pre {
+      @apply whitespace-pre-wrap wrap-break-word;
+    }
+  }
+  .event-btn {
+    @apply w-full align-middle bg-green-500 hover:bg-green-400;
+    svg {
+      @apply inline-block me-1;
+    }
   }
 }
 
