@@ -170,6 +170,17 @@ header {
 
 footer {
   @apply bg-linear-to-b from-stone-200 from-0%  to-transparent to-10%;
+  .footer-top {
+    .footer-menu {
+      @apply text-center flex justify-center gap-4 mb-4;
+      .menu-item {
+        @apply hover:text-violet-500 transition-all duration-300 ease-in-out;
+      }
+    }
+  }
+  .footer-bottom {
+    @apply text-center font-light;
+  }
 }
 
 .products-bg {
