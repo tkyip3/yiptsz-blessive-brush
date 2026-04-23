@@ -168,6 +168,19 @@ header {
   }
 }
 
+.CTA {
+  @apply text-center;
+  .CTA-title {
+    @apply text-4xl px-4 py-6 font-Potta-One;
+  }
+  .CTA-list {
+    @apply flex flex-wrap;
+    .CTA-item {
+      @apply text-2xl md:w-1/2 px-4 py-6;
+    }
+  }
+}
+
 footer {
   @apply bg-linear-to-b from-stone-200 from-0%  to-transparent to-10%;
   .footer-top {
