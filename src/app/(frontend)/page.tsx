@@ -102,6 +102,30 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+      <section className="home-share">
+        <div className="home-share-container">
+          <div className="home-about-title section-title">參加者課堂後分享</div>
+          <div className="share-list">
+            <div className="share-item">
+              <div className="item-img">
+                <Image src={'/images/home/share_img1.png'} alt="share1" width="180" height="180" />
+              </div>
+              <div className="item-detail">
+                參加祝福手繪時，因為專注繪畫，令內心很平靜。而寫祝福字詞時，自己也有被祝福的感覺。是個好的體驗，謝謝導師的細心教導。
+              </div>
+            </div>
+            <div className="share-item">
+              <div className="item-img">
+                <Image src={'/images/home/share_img2.png'} alt="share1" width="180" height="180" />
+              </div>
+              <div className="item-detail">
+                這次參與讓我感到非常愉快。活動不僅可以放鬆身心，還能把祝福、心意帶給親友。
+                這樣非常有意義，期待下次能再次有更進深的學習。
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="home-section">
         <div className="home-product">
           <div className="home-product-container">
