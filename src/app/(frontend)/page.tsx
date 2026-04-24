@@ -86,10 +86,26 @@ export default async function HomePage() {
           </div>
         </div>
       </div>
+      <section className="home-about">
+        <div className="about-bg">
+          <video playsInline autoPlay muted loop poster="polina.jpg" id="bgvid">
+            {/* <source src="polina.webm" type="video/webm" /> */}
+            <source src="/video/home/about_bg.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div className="home-about-container">
+          <div className="home-about-title section-title">關於我們</div>
+          <div className="home-about-content">
+            2023年由 Apple 創辦 Blessive Brush 祝福手繪，把文字結合藝術的表達方式，
+            透過手繪文字創作，將轉化為具體可見的手繪作品，幫助人們祝福自己也將祝福帶給他人。這個畫文字的藝術為強調以文字傳遞感受，鼓勵人們認識自己、認識創造主，
+            信仰生活化地實踐「分享越多·祝福越多」的信念。
+          </div>
+        </div>
+      </section>
       <section className="home-section">
         <div className="home-product">
           <div className="home-product-container">
-            <div className="home-product-title">精選作品</div>
+            <div className="home-product-title section-title">精選作品</div>
             {products.docs.length > 0 ? (
               <div className="home-product-list">
                 {products.docs.map((product: Product) => {
@@ -129,7 +145,7 @@ export default async function HomePage() {
         </div>
         <div className="home-event">
           <div className="home-event-container">
-            <div className="home-event-title">最新活動</div>
+            <div className="home-event-title section-title">最新活動</div>
             {events.docs.length > 0 ? (
               <div className="home-event-swiper">
                 <HomeEventSwiper images={eventImages} />
