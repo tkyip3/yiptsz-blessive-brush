@@ -31,7 +31,7 @@ body {
   }
 
   .liquidGlass-shine {
-    @apply absolute z-2 overflow-hidden inset-shadow-sm inset-shadow-gray-100 inset-0;
+    @apply absolute z-2 overflow-hidden inset-shadow-sm inset-shadow-neutral-100 inset-0;
   }
 
   .liquidGlass-main {
@@ -97,9 +97,27 @@ header {
     }
   }
   .home-about-container {
-    @apply max-w-full 2xl:max-w-3xl xl:max-w-xl lg:max-w-lg py-8 px-4 mx-auto;
+    @apply w-full py-12 px-4 mx-auto;
     .home-about-content {
       @apply text-center;
+      .content-list {
+        @apply flex-col md:flex-row flex gap-6 justify-center;
+        .content-list-item {
+          @apply flex-1;
+          .item-icon {
+            @apply mb-4;
+            svg {
+              @apply mx-auto w-20 h-20;
+            }
+          }
+          .item-title {
+            @apply text-lg font-semibold mb-1;
+          }
+          .item-detail {
+            @apply text-neutral-700 text-base/5;
+          }
+        }
+      }
     }
   }
 }
@@ -110,7 +128,7 @@ header {
     .share-list {
       @apply flex flex-wrap gap-6 items-center justify-center;
       .share-item {
-        @apply w-80 lg:w-100 aspect-card-ratio bg-[url(/images/home/share_bg.jpg)] bg-cover bg-center rounded-2xl p-8 flex flex-col items-center justify-center text-gray-600 lg:text-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 gap-4;
+        @apply w-80 lg:w-100 aspect-card-ratio bg-[url(/images/home/share_bg.jpg)] bg-cover bg-center rounded-2xl p-8 flex flex-col items-center justify-center text-neutral-600 lg:text-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 gap-4;
         .item-img {
           @apply flex-2 aspect-square flex items-center justify-center;
           img {
@@ -119,6 +137,9 @@ header {
         }
         .item-detail {
           @apply flex-1;
+        }
+        .item-title {
+          @apply text-lg font-semibold;
         }
       }
     }
@@ -211,9 +232,9 @@ header {
     @apply text-2xl md:text-3xl lg:text-4xl px-4 py-12 font-Potta-One bg-[url(/images/CTA/title_bg.jpg)] bg-cover bg-center;
   }
   .CTA-list {
-    @apply flex flex-wrap;
+    @apply flex flex-wrap md:h-72;
     .CTA-item {
-      @apply w-full md:w-1/2 h-42 relative overflow-hidden;
+      @apply w-full md:w-1/2 min-h-72 relative overflow-hidden;
       .item-bg,
       .item-main {
         @apply absolute left-0 top-0 w-full h-full;
@@ -228,7 +249,13 @@ header {
           @apply text-6xl mb-3;
         }
         .main-title {
-          @apply text-lg md:text-2xl font-bold mb-2;
+          @apply text-lg md:text-2xl font-semibold mb-2;
+        }
+        .main-detail {
+          @apply text-sm text-neutral-700 mb-3;
+        }
+        .main-action {
+          @apply font-bold text-lg;
         }
       }
 
@@ -320,7 +347,7 @@ footer {
         @apply w-full h-full object-cover transition-all duration-300;
       }
       &.wrapper-icon {
-        @apply flex items-center justify-center p-4 bg-gray-900/50;
+        @apply flex items-center justify-center p-4 bg-neutral-900/50;
       }
     }
   }
@@ -355,7 +382,7 @@ footer {
         @apply w-full h-full object-cover transition-all duration-300;
       }
       &.wrapper-icon {
-        @apply flex items-center justify-center p-4 bg-gray-900/50;
+        @apply flex items-center justify-center p-4 bg-neutral-900/50;
       }
     }
   }

@@ -11,6 +11,7 @@ import Link from 'next/link'
 
 import HomeEventSwiper from '@/components/HomeEventSwiper'
 import type { Product } from '@/payload-types'
+import { Icon } from '@iconify/react'
 
 import { Button } from '@/components/ui/button'
 
@@ -94,11 +95,31 @@ export default async function HomePage() {
           </video>
         </div>
         <div className="home-about-container">
-          <div className="home-about-title section-title">關於我們</div>
+          <div className="home-about-title section-title">關於 Blessive Brush</div>
           <div className="home-about-content">
-            2023年由 Apple 創辦 Blessive Brush 祝福手繪，把文字結合藝術的表達方式，
-            透過手繪文字創作，將轉化為具體可見的手繪作品，幫助人們祝福自己也將祝福帶給他人。這個畫文字的藝術為強調以文字傳遞感受，鼓勵人們認識自己、認識創造主，
-            信仰生活化地實踐「分享越多·祝福越多」的信念。
+            <div className="content-list">
+              <div className="content-list-item">
+                <div className="item-icon">
+                  <Icon icon="line-md:account" width="24" height="24" />
+                </div>
+                <div className="item-title">2023年由 Apple 創辦</div>
+                <div className="item-detail">把文字結合藝術，讓祝福變得具體可見。</div>
+              </div>
+              <div className="content-list-item">
+                <div className="item-icon">
+                  <Icon icon="line-md:heart" width="24" height="24" />
+                </div>
+                <div className="item-title">實踐「分享越多·祝福越多」</div>
+                <div className="item-detail">以文字傳遞感受，鼓勵人們認識自己、認識創造主。</div>
+              </div>
+              <div className="content-list-item">
+                <div className="item-icon">
+                  <Icon icon="line-md:pencil" width="24" height="24" />
+                </div>
+                <div className="item-title">邀請你，一起出發</div>
+                <div className="item-detail">無需要畫畫天份，馬上體驗手繪畫字的樂趣。</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -111,17 +132,20 @@ export default async function HomePage() {
                 <Image src={'/images/home/share_img1.png'} alt="share1" width="180" height="180" />
               </div>
               <div className="item-detail">
-                參加祝福手繪時，因為專注繪畫，令內心很平靜。而寫祝福字詞時，自己也有被祝福的感覺。是個好的體驗，謝謝導師的細心教導。
+                參加祝福手繪時，因為專注繪畫，令內心很平靜。 而寫祝福字詞時，自己也有被祝福的感覺。
+                是個好的體驗，謝謝導師的細心教導。
               </div>
+              <div className="item-title">體驗班學員</div>
             </div>
             <div className="share-item">
               <div className="item-img">
                 <Image src={'/images/home/share_img2.png'} alt="share1" width="180" height="180" />
               </div>
               <div className="item-detail">
-                這次參與讓我感到非常愉快。活動不僅可以放鬆身心，還能把祝福、心意帶給親友。
-                這樣非常有意義，期待下次能再次有更進深的學習。
+                這次參與讓我感到非常愉快。活動不僅可以放鬆身心，
+                還能把祝福、心意帶給親友。這樣非常有意義， 期待下次能再次有更進深的學習。
               </div>
+              <div className="item-title">體驗班學員</div>
             </div>
           </div>
         </div>

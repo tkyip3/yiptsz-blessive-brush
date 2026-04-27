@@ -9,7 +9,14 @@ export default function CTA() {
           <div className="item-main">
             <div className="main-icon">🎨</div>
             <div className="main-title">體驗班</div>
-            <div className="main-detail">無需畫畫經驗，輕鬆體驗手繪字的樂趣。</div>
+            <div className="main-detail">
+              ✏️ 無需畫畫經驗，輕鬆體驗手繪字的樂趣
+              <br />
+              ⏰ 單堂 2 小時｜實體／線上可選
+              <br />
+              💰 $400/人｜多人同行享優惠
+            </div>
+            <div className="main-action">立即報名體驗班</div>
           </div>
         </Link>
         <Link href="/events/1f0c09f8-f909-43f8-970d-754bce1570ad" className="CTA-item">
@@ -17,7 +24,12 @@ export default function CTA() {
           <div className="item-main">
             <div className="main-icon">👩‍🏫</div>
             <div className="main-title">初級導師課程</div>
-            <div className="main-detail">進深教學，掌握更多手繪字的技巧。</div>
+            <div className="main-detail">
+              進深教學，掌握更多手繪字的技巧與引導心法 <br />
+              ⏰ 10-12 小時（4堂×3小時）｜認證後可獨立開班 <br />
+              💰 $2,400/人｜2 人同行享優惠
+            </div>
+            <div className="main-action">立即報名導師課程</div>
           </div>
         </Link>
       </div>
