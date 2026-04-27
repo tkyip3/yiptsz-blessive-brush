@@ -66,7 +66,7 @@ header {
 
     .banner-card-wrapper {
       .banner-card {
-        @apply shadow-md aspect-card-ratio transform-3d perspective-distant flex flex-col items-center justify-center lg:max-w-[32.3vw] lg:max-h-[72vh] mx-auto bg-[url(/images/common/home_card.jpg)] bg-cover bg-center shadow-2xl/50;
+        @apply shadow-md aspect-card-ratio transform-3d perspective-distant flex flex-col items-center justify-center max-h-[60vh] lg:max-w-[32.3vw] lg:max-h-[72vh] mx-auto bg-[url(/images/common/home_card.jpg)] bg-cover bg-center shadow-2xl/50;
       }
     }
     .banner-title-wrapper {
@@ -129,7 +129,7 @@ header {
   @apply lg:flex lg:items-center lg:justify-center;
   .home-product,
   .home-event {
-    @apply min-h-screen lg:w-1/2;
+    @apply lg:min-h-screen lg:w-1/2;
   }
   .home-product-container,
   .home-event-container {
@@ -213,7 +213,7 @@ header {
   .CTA-list {
     @apply flex flex-wrap;
     .CTA-item {
-      @apply text-lg md:text-2xl w-full md:w-1/2 h-36 relative overflow-hidden;
+      @apply w-full md:w-1/2 h-42 relative overflow-hidden;
       .item-bg,
       .item-main {
         @apply absolute left-0 top-0 w-full h-full;
@@ -223,9 +223,12 @@ header {
         @apply bg-[url(/images/CTA/item_bg.jpg)] bg-cover bg-center transition-all duration-300;
       }
       .item-main {
-        @apply px-4 py-8 flex flex-col gap-3 items-center justify-center font-bold transition-all duration-300;
+        @apply px-4 py-8 flex flex-col  items-center justify-center  transition-all duration-300;
         .main-icon {
-          @apply text-6xl;
+          @apply text-6xl mb-3;
+        }
+        .main-title {
+          @apply text-lg md:text-2xl font-bold mb-2;
         }
       }
 
