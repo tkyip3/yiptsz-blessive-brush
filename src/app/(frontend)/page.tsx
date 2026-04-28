@@ -100,25 +100,59 @@ export default async function HomePage() {
             <div className="content-list">
               <div className="content-list-item">
                 <div className="item-icon">
-                  <Icon icon="line-md:account" width="24" height="24" />
+                  <Image
+                    src={'/images/home/about_icon1.png'}
+                    alt="icon1"
+                    width="160"
+                    height="160"
+                  />
+                  {/* <Icon icon="line-md:account" width="24" height="24" /> */}
                 </div>
                 <div className="item-title">2023年由 Apple 創辦</div>
                 <div className="item-detail">把文字結合藝術，讓祝福變得具體可見。</div>
               </div>
               <div className="content-list-item">
                 <div className="item-icon">
-                  <Icon icon="line-md:heart" width="24" height="24" />
+                  <Image
+                    src={'/images/home/about_icon2.png'}
+                    alt="icon1"
+                    width="160"
+                    height="160"
+                  />
+                  {/* <Icon icon="line-md:heart" width="24" height="24" /> */}
                 </div>
                 <div className="item-title">實踐「分享越多·祝福越多」</div>
                 <div className="item-detail">以文字傳遞感受，鼓勵人們認識自己、認識創造主。</div>
               </div>
               <div className="content-list-item">
                 <div className="item-icon">
-                  <Icon icon="line-md:pencil" width="24" height="24" />
+                  <Image
+                    src={'/images/home/about_icon3.png'}
+                    alt="icon1"
+                    width="160"
+                    height="160"
+                  />
+                  {/* <Icon icon="line-md:pencil" width="24" height="24" /> */}
                 </div>
                 <div className="item-title">邀請你，一起出發</div>
                 <div className="item-detail">無需要畫畫天份，馬上體驗手繪畫字的樂趣。</div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="home-about-me">
+        <div className="container mx-auto">
+          <div className="home-about-me-wrapper">
+            <div className="about-main">
+              <div className="about-title section-title">關於我</div>
+              <div className="about-description">我是葉子，是祝福手繪的中級導師</div>
+            </div>
+            <div className="about-card">
+              <Tilt
+                className="about-card-main"
+                options={{ max: 25, speed: 1000, glare: true, 'max-glare': 0.5, scale: 1.05 }}
+              />
             </div>
           </div>
         </div>
