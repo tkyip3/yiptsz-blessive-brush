@@ -14,6 +14,7 @@ import type { Product } from '@/payload-types'
 import { Icon } from '@iconify/react'
 
 import { Button } from '@/components/ui/button'
+import { ButtonGroup } from '@/components/ui/button-group'
 
 export default async function HomePage() {
   const payload = await getPayload({ config })
@@ -146,7 +147,21 @@ export default async function HomePage() {
           <div className="home-about-me-wrapper">
             <div className="about-main">
               <div className="about-title section-title">關於我</div>
-              <div className="about-description">我是葉子，是祝福手繪的中級導師</div>
+              <div className="about-description">
+                <p>
+                  我是葉子 Felix Yip，2024 年成為 Blessive Brush
+                  祝福手繪的初級導師。最初因好奇走進體驗班，發現文字可用繪畫的形式去表達和送贈，為了進深，而決定報讀導師課程。在我的課堂裡，願為你得享心靈的休息，同時分享畫字的樂趣。
+                </p>
+                <p className="mt-3 font-semibold">歡迎參與相關過程：</p>
+                <ButtonGroup className="mt-2">
+                  <Button size="lg">
+                    <Link href="/events/332a2631-c809-41ae-8e59-7ae5f33f511b">體驗班</Link>
+                  </Button>
+                  <Button size="lg">
+                    <Link href="/events/1f0c09f8-f909-43f8-970d-754bce1570ad">導師課程</Link>
+                  </Button>
+                </ButtonGroup>
+              </div>
             </div>
             <div className="about-card">
               <Tilt

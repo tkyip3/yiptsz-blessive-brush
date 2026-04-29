@@ -127,7 +127,7 @@ header {
 }
 
 .home-about-me {
-  @apply py-12;
+  @apply py-12 bg-[url(/images/home/about_me_bg.jpg)] bg-cover bg-center bg-fixed inset-shadow-sm inset-shadow-current/30;
   .home-about-me-wrapper {
     @apply flex flex-col lg:flex-row items-center justify-center gap-8;
     .about-card,
