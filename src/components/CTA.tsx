@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { Button } from '@/components/ui/button'
 export default function CTA() {
   return (
     <div className="CTA">
@@ -19,7 +20,9 @@ export default function CTA() {
               <br />
               💰 $400/人｜多人同行享優惠
             </div>
-            <div className="main-action">立即報名體驗班</div>
+            <div className="main-action">
+              <Button size="lg">立即報名體驗班</Button>
+            </div>
           </div>
         </Link>
         <Link href="/events/1f0c09f8-f909-43f8-970d-754bce1570ad" className="CTA-item">
@@ -34,7 +37,9 @@ export default function CTA() {
               ⏰ 10-12 小時（4堂×3小時）｜認證後可獨立開班 <br />
               💰 $2,400/人｜2 人同行享優惠
             </div>
-            <div className="main-action">立即報名導師課程</div>
+            <div className="main-action">
+              <Button size="lg">立即報名導師課程</Button>
+            </div>
           </div>
         </Link>
       </div>
