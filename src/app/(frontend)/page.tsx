@@ -148,9 +148,10 @@ export default async function HomePage() {
             <div className="about-main">
               <div className="about-title section-title">關於我</div>
               <div className="about-description">
+                <p>我是葉子 Felix Yip，2024 年成為 Blessive Brush 祝福手繪的初級導師。</p>
                 <p>
-                  我是葉子 Felix Yip，2024 年成為 Blessive Brush
-                  祝福手繪的初級導師。最初因好奇走進體驗班，發現文字可用繪畫的形式去表達和送贈，為了進深，而決定報讀導師課程。在我的課堂裡，願為你得享心靈的休息，同時分享畫字的樂趣。
+                  最初因好奇走進體驗班，發現文字可用繪畫的形式去表達和送贈，
+                  為了進深，而決定報讀導師課程。
                 </p>
                 <p className="mt-3 font-semibold">歡迎參與相關過程：</p>
                 <ButtonGroup className="mt-2">
@@ -181,8 +182,8 @@ export default async function HomePage() {
                 <Image src={'/images/home/share_img1.png'} alt="share1" width="180" height="180" />
               </div>
               <div className="item-detail">
-                參加祝福手繪時，因為專注繪畫，令內心很平靜。 而寫祝福字詞時，自己也有被祝福的感覺。
-                是個好的體驗，謝謝導師的細心教導。
+                「參加祝福手繪時，因為專注繪畫，令內心很平靜。
+                而寫祝福字詞時，自己也有被祝福的感覺。 是個好的體驗，謝謝導師的細心教導。」
               </div>
               <div className="item-title">體驗班學員</div>
             </div>
@@ -191,8 +192,8 @@ export default async function HomePage() {
                 <Image src={'/images/home/share_img2.png'} alt="share1" width="180" height="180" />
               </div>
               <div className="item-detail">
-                這次參與讓我感到非常愉快。活動不僅可以放鬆身心，
-                還能把祝福、心意帶給親友。這樣非常有意義， 期待下次能再次有更進深的學習。
+                「這次參與讓我感到非常愉快。活動不僅可以放鬆身心，
+                還能把祝福、心意帶給親友。這樣非常有意義， 期待下次能再次有更進深的學習。」
               </div>
               <div className="item-title">體驗班學員</div>
             </div>
