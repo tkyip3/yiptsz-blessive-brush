@@ -138,7 +138,7 @@ header {
       }
       .about-card {
         .about-card-main {
-          @apply shadow-md aspect-card-landscape-ratio transform-3d perspective-distant flex flex-col items-center justify-center max-w-[60vw] lg:max-w-[72vw] mx-auto bg-[url(/images/common/home_card.jpg)] bg-cover bg-center shadow-2xl/50;
+          @apply shadow-md aspect-square transform-3d perspective-distant flex flex-col items-center justify-center max-w-[70vw] md:max-w-96 mx-auto bg-[url(/images/home/about_me_card.jpg)] bg-cover bg-center shadow-2xl/50;
         }
       }
     }

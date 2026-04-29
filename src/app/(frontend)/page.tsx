@@ -148,7 +148,7 @@ export default async function HomePage() {
             <div className="about-main">
               <div className="about-title section-title">關於我</div>
               <div className="about-description">
-                <p>我是葉子 Felix Yip，2024 年成為 Blessive Brush 祝福手繪的初級導師。</p>
+                <p>我是葉子 Felix Yip，2026 年成為 Blessive Brush 祝福手繪的中級導師。</p>
                 <p>
                   最初因好奇走進體驗班，發現文字可用繪畫的形式去表達和送贈，
                   為了進深，而決定報讀導師課程。
