@@ -128,15 +128,18 @@ header {
 
 .home-about-me {
   @apply py-12 bg-[url(/images/home/about_me_bg.jpg)] bg-cover bg-center bg-fixed inset-shadow-sm inset-shadow-current/30;
-  .home-about-me-wrapper {
-    @apply flex flex-col lg:flex-row items-center justify-center gap-8;
-    .about-card,
-    .about-main {
-      @apply w-full lg:w-1/2;
-    }
-    .about-card {
-      .about-card-main {
-        @apply shadow-md aspect-card-landscape-ratio transform-3d perspective-distant flex flex-col items-center justify-center max-h-[60vh] lg:max-w-[32.3vw] lg:max-h-[72vh] mx-auto bg-[url(/images/common/home_card.jpg)] bg-cover bg-center shadow-2xl/50;
+  .home-about-me-container {
+    @apply container mx-auto px-4;
+    .home-about-me-wrapper {
+      @apply flex flex-col lg:flex-row items-center justify-center gap-8;
+      .about-card,
+      .about-main {
+        @apply w-full lg:w-1/2;
+      }
+      .about-card {
+        .about-card-main {
+          @apply shadow-md aspect-card-landscape-ratio transform-3d perspective-distant flex flex-col items-center justify-center max-w-[60vw] lg:max-w-[72vw] mx-auto bg-[url(/images/common/home_card.jpg)] bg-cover bg-center shadow-2xl/50;
+        }
       }
     }
   }

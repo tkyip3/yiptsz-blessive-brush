@@ -143,7 +143,7 @@ export default async function HomePage() {
         </div>
       </section>
       <section className="home-about-me">
-        <div className="container mx-auto">
+        <div className="home-about-me-container">
           <div className="home-about-me-wrapper">
             <div className="about-main">
               <div className="about-title section-title">關於我</div>
