@@ -87,14 +87,14 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
         <Script
           id="gtag-js"
           strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=G-V90YGB1BHK"
+          src="https://www.googletagmanager.com/gtag/js?id=G-6GH1PFL5T9"
         />
         <Script id="gtag-init" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-V90YGB1BHK');
+            gtag('config', 'G-6GH1PFL5T9');
           `}
         </Script>
       </head>
