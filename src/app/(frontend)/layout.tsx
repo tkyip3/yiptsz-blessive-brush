@@ -3,6 +3,8 @@ import './styles.css'
 
 import type { Metadata } from 'next'
 
+import Script from 'next/script'
+
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import CTA from '@/components/CTA'
@@ -82,6 +84,19 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100..900&family=Potta+One&display=swap"
           rel="stylesheet"
         />
+        <Script
+          id="gtag-js"
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-6GH1PFL5T9"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-6GH1PFL5T9');
+          `}
+        </Script>
       </head>
       <body>
         <Header />
